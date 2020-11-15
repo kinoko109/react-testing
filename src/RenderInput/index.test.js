@@ -43,7 +43,7 @@ describe('', () => {
     const value = screen.getByPlaceholderText('Enter');
     userEvent.type(value, 'test');
     userEvent.click(screen.getByRole('button'));
-    // 100の値がinputのstateに入る
+    // outputConsoleが1回実行されるか
     expect(outputConsole).toHaveBeenCalledTimes(1);
   });
 });
