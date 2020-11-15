@@ -4,6 +4,7 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 import RenderInput from './RenderInput';
 import WorkList from './WorkList/index.';
+import MockServer from './MockServer';
 
 function App() {
   const data = [
@@ -28,6 +29,7 @@ function App() {
         <Counter />
         <RenderInput onClickButton={console.log} />
         <WorkList works={data} />
+        <MockServer />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
