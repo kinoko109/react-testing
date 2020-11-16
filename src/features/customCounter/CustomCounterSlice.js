@@ -62,6 +62,7 @@ export const customCounterSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchDummy.fulfilled, (state, action) => {
+      console.log(action.type);
       state.value = 100 + action.payload;
     });
     builder.addCase(fetchDummy.rejected, (state, action) => {

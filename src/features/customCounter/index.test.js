@@ -1,4 +1,4 @@
-import reducer, { increment, decrementm, incrementByAmount } from '../customCounter/CustomCounterSlice';
+import reducer, { increment, decrementm, incrementByAmount, fetchDummy } from '../customCounter/CustomCounterSlice';
 
 describe('', () => {
   describe('', () => {
@@ -58,6 +58,25 @@ describe('', () => {
       const action = { type: incrementByAmount.type, payload: 5 };
       const state = reducer(initialState, action);
       expect(state.value).toEqual(5001);
+    });
+  });
+
+  describe('extraReducers', () => {
+    const initialState = {
+      mode: 0,
+      value: 100
+    };
+    it('', () => {
+      const action = { type: fetchDummy.fulfilled.type, payload: 5 };
+      console.log(fetchDummy.fulfilled.type);
+      const state = reducer(initialState, action);
+      expect(state.value).toEqual(105);
+    });
+    it('', () => {
+      const action = { type: fetchDummy.rejected.type, payload: 100 };
+      console.log(fetchDummy.rejected.type);
+      const state = reducer(initialState, action);
+      expect(state.value).toEqual(0);
     });
   });
 });
