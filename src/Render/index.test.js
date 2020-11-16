@@ -35,7 +35,10 @@ describe('Rendering', () => {
     // 「Hoge」が挿入されている要素があるかをチェックできる
     expect(screen.getByText('Hoge')).toBeTruthy();
     // 「HogeHogeHoge」が挿入されている要素がない場合はnullを返し、テストはfailにならない
-    expect(screen.getByText('HogeHogeHoge')).toBeNull();
+    // queryByTextではなくて、getByTextなどを使用すると文字列がないときエラーを返すため
+    // 対象の文字列がないことをテストシたい場合はqueryByTextでないといけない
+    expect(screen.queryByText('HogeHogeHoge')).toBeNull();
+    // expect(screen.queryByText('dgadgads')).toBeNull();
   });
   it('対象のid属性が指定されている要素があるか', () => {
     render(<Render />);
