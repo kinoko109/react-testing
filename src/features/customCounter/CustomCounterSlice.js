@@ -37,9 +37,9 @@ export const customCounterSlice = createSlice({
           state.value += 1000;
           break;
         default:
+          state.value += 1;
           break;
       }
-      state.value += 1;
     },
     decrement: (state) => {
       state.value -= 1;
