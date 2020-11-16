@@ -6,6 +6,7 @@ import RenderInput from './RenderInput';
 import WorkList from './WorkList/index.';
 import MockServer from './MockServer';
 import Redux from './Redux';
+import ReduxAsync from './ReduxAsync';
 
 function App() {
   const data = [
@@ -32,6 +33,7 @@ function App() {
         <WorkList works={data} />
         <MockServer />
         <Redux />
+        <ReduxAsync />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
