@@ -7,6 +7,7 @@ import WorkList from './WorkList/index.';
 import MockServer from './MockServer';
 import Redux from './Redux';
 import ReduxAsync from './ReduxAsync';
+import CustomCount from './useCounter';
 
 function App() {
   const data = [
@@ -34,6 +35,7 @@ function App() {
         <MockServer />
         <Redux />
         <ReduxAsync />
+        <CustomCount />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
