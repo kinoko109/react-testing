@@ -13,6 +13,8 @@ export const fetchDummy = createAsyncThunk('fetch/dummy', async (num) => {
 
 export const fetchJson = createAsyncThunk('fetch/api', async () => {
   const res = await axios.get('https://jsonplaceholder.typicode.com/users/1');
+  // throw new Error();
+  // console.log(res);
   const { username } = res.data;
   return username;
 });
@@ -71,12 +73,15 @@ export const customCounterSlice = createSlice({
     builder.addCase(fetchJson.fulfilled, (state, action) => {
       state.username = action.payload;
     });
+    builder.addCase(fetchJson.rejected, (state, action) => {
+      state.username = 'fail';
+    });
   }
 });
 
 export const { increment, decrement, incrementByAmount } = customCounterSlice.actions;
 
 export const selectCount = (state) => state.customCounter.value;
-export const selectUsername = (state) => state.customCounter.selectUsername;
+export const selectUsername = (state) => state.customCounter.username;
 
 export default customCounterSlice.reducer;
