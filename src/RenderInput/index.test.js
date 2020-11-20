@@ -3,7 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import RenderInput from './index';
 
-// それぞれのitのテストケースのあとに必ずcleanupを実行する。
+// それぞれのitのテストケースのあとに必ずcleanupを実行する
 // （renderによってレンダリングされたコンポーネントをアンマウントしてくれる）
 // 副作用などをなくして、より正確にテストできる。
 afterEach(() => cleanup());
