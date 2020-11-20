@@ -5,7 +5,7 @@ import RenderInput from './index';
 
 // それぞれのitのテストケースのあとに必ずcleanupを実行する
 // （renderによってレンダリングされたコンポーネントをアンマウントしてくれる）
-// 副作用などをなくして、より正確にテストできる。
+// 副作用などをなくして、より正確にテストできる
 afterEach(() => cleanup());
 
 describe('Rendering', () => {
