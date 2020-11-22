@@ -5,7 +5,7 @@ import UseEffectRender from './index';
 describe('', () => {
   it('', async () => {
     render(<UseEffectRender />);
-    // I amが当てはまるテキストがあるかを探す
+    // I amに当てはまるテキストがあるかを探す
     expect(screen.queryByText(/I am/)).toBeNull();
     console.log(await screen.findByText(/I am/));
     // findByTextは、レスポンスが返ってきてくれるまで待ってから処理してくれる（最大４秒？）
